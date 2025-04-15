@@ -38,4 +38,12 @@ public interface IDocument<TPrimaryKey> : IEntity<TPrimaryKey>
 	/// This behavior could be overriden in documents implementation.
 	/// </remarks>
 	int? Owner { get; init; }
+	/// <summary>
+	/// Number of attached file to the document. 
+	/// </summary>
+	/// <remarks>
+	/// A document can have a number of associated file typically uploaded in the file storage. This
+	/// property is a shortcut to the number of uploaded files linked to the document.
+	/// </remarks>
+	int FileCount { get; init; }
 }

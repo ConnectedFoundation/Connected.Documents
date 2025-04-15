@@ -1,9 +1,6 @@
-﻿using Connected.Services;
-
-namespace Connected.Documents.Dtos;
-public interface IInsertDocumentDto : IDto
+﻿namespace Connected.Documents.Dtos;
+public interface IInsertDocumentDto : IDocumentDto
 {
 	int? Author { get; set; }
 	DateTimeOffset Created { get; set; }
-	string? Code { get; set; }
 }
