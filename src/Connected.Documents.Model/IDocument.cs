@@ -46,4 +46,18 @@ public interface IDocument<TPrimaryKey> : IEntity<TPrimaryKey>
 	/// property is a shortcut to the number of uploaded files linked to the document.
 	/// </remarks>
 	int FileCount { get; init; }
+	/// <summary>
+	/// Title of the document. 
+	/// </summary>
+	/// <remarks>
+	/// A document can optionaly have a title which briefly describes its content.
+	/// </remarks>
+	string? Title { get; init; }
+	/// <summary>
+	/// The url of the document. 
+	/// </summary>
+	/// <remarks>
+	/// If a document can be accessed directly by the url this property contains its value.
+	/// </remarks>
+	string? Url { get; init; }
 }

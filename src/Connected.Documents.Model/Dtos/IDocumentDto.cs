@@ -5,4 +5,5 @@ namespace Connected.Documents.Dtos;
 public interface IDocumentDto : IDto
 {
 	string? Code { get; set; }
+	string? Title { get; set; }
 }

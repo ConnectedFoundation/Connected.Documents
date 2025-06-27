@@ -47,6 +47,12 @@ public abstract record Document<TPrimaryKey> : ConsistentEntity<TPrimaryKey>, ID
 	public int? Owner { get; init; }
 
 	/// <inheritdoc cref="IDocument{TPrimaryKey}.FileCount"/>
-	[Ordinal(4)]
+	[Ordinal(5)]
 	public int FileCount { get; init; }
+	/// <inheritdoc cref="IDocument{TPrimaryKey}.Title"/>
+	[Ordinal(6), Length(128)]
+	public string? Title { get; init; }
+	/// <inheritdoc cref="IDocument{TPrimaryKey}.Url"/>
+	[Ordinal(7), Length(136), Index(false)]
+	public string? Url { get; init; }
 }
