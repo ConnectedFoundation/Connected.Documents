@@ -6,4 +6,5 @@ public interface IUpdateDocumentDto<TPrimaryKey> : IDocumentDto, IPrimaryKeyDto<
 {
 	DateTimeOffset? Modified { get; set; }
 	int? Owner { get; set; }
+	int FileCount { get; set; }
 }
