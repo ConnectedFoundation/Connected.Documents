@@ -10,4 +10,6 @@ public abstract class DocumentDto : Dto, IDocumentDto
 
 	[MaxLength(DefaultTitleLength)]
 	public virtual string? Title { get; set; }
+
+	public DocumentStatus Status { get; set; } = DocumentStatus.Draft;
 }

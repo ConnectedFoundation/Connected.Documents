@@ -5,6 +5,6 @@ public interface IUpdateDocumentDto<TPrimaryKey> : IDocumentDto, IPrimaryKeyDto<
 	where TPrimaryKey : notnull
 {
 	DateTimeOffset? Modified { get; set; }
-	int? Owner { get; set; }
+	string? Owner { get; set; }
 	int FileCount { get; set; }
 }

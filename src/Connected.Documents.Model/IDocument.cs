@@ -2,6 +2,14 @@
 
 namespace Connected.Documents;
 
+public enum DocumentStatus
+{
+	Draft = 0,
+	Ready = 1,
+	Complete = 2,
+	Cancel = 3
+}
+
 /// <summary>
 /// Represents the base entity for all documents.
 /// </summary>
@@ -28,16 +36,16 @@ public interface IDocument<TPrimaryKey> : IEntity<TPrimaryKey>
 	/// </summary>
 	string? Code { get; init; }
 	/// <summary>
-	/// The user which created the document. Can be null if document was created by the system.
+	/// The identity which created the document. Can be null if document was created by the system.
 	/// </summary>
-	int? Author { get; init; }
+	string? Author { get; init; }
 	/// <summary>
-	/// The user last modified the document. Once user modifies the document it becomes the Owner. 
+	/// The identity last modified the document. Once identity modifies the document it becomes the Owner. 
 	/// </summary>
 	/// <remarks>
 	/// This behavior could be overriden in documents implementation.
 	/// </remarks>
-	int? Owner { get; init; }
+	string? Owner { get; init; }
 	/// <summary>
 	/// Number of attached file to the document. 
 	/// </summary>
@@ -60,4 +68,6 @@ public interface IDocument<TPrimaryKey> : IEntity<TPrimaryKey>
 	/// If a document can be accessed directly by the url this property contains its value.
 	/// </remarks>
 	string? Url { get; init; }
+
+	DocumentStatus Status { get; init; }
 }

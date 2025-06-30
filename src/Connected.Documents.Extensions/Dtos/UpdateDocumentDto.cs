@@ -1,4 +1,5 @@
 ﻿using Connected.Annotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Connected.Documents.Dtos;
 public abstract class UpdateDocumentDto<TPrimaryKey> : DocumentDto, IUpdateDocumentDto<TPrimaryKey>
@@ -7,7 +8,9 @@ public abstract class UpdateDocumentDto<TPrimaryKey> : DocumentDto, IUpdateDocum
 	[MinValue(1)]
 	public required TPrimaryKey Id { get; set; }
 	public DateTimeOffset? Modified { get; set; }
-	public int? Owner { get; set; }
+
+	[MaxLength(256)]
+	public string? Owner { get; set; }
 
 	[MinValue(0)]
 	public int FileCount { get; set; }

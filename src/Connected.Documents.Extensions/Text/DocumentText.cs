@@ -8,12 +8,10 @@ public abstract record DocumentText<TPrimaryKey> : Entity<TPrimaryKey>, IDocumen
   where TPrimaryKey : notnull
 {
 
-	[Ordinal(0), Length(256)]
-	public virtual string? Title { get; init; }
 
-	[Ordinal(1), Length(2048)]
+	[Ordinal(0), Length(2048)]
 	public virtual string? Abstract { get; init; }
 
-	[Ordinal(2), Length(-1)]
+	[Ordinal(1), Length(-1)]
 	public virtual string? Text { get; init; }
 }

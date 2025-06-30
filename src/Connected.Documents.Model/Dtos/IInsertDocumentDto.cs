@@ -1,6 +1,6 @@
 ﻿namespace Connected.Documents.Dtos;
 public interface IInsertDocumentDto : IDocumentDto
 {
-	int? Author { get; set; }
+	string? Author { get; set; }
 	DateTimeOffset Created { get; set; }
 }

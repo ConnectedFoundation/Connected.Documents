@@ -33,18 +33,18 @@ public abstract record Document<TPrimaryKey> : ConsistentEntity<TPrimaryKey>, ID
 	[Ordinal(2), Length(32)]
 	public string? Code { get; init; }
 	/// <summary>
-	/// The user which created the document. Can be null if document was created by the system.
+	/// The identity which created the document. Can be null if document was created by the system.
 	/// </summary>
-	[Ordinal(3)]
-	public int? Author { get; init; }
+	[Ordinal(3), Length(256)]
+	public string? Author { get; init; }
 	/// <summary>
-	/// The user last modified the document. Once user modifies the document it becomes the Owner. 
+	/// The identity last modified the document. Once identity modifies the document it becomes the Owner. 
 	/// </summary>
 	/// <remarks>
 	/// This behavior could be overriden in documents implementation.
 	/// </remarks>
-	[Ordinal(4)]
-	public int? Owner { get; init; }
+	[Ordinal(4), Length(256)]
+	public string? Owner { get; init; }
 
 	/// <inheritdoc cref="IDocument{TPrimaryKey}.FileCount"/>
 	[Ordinal(5)]
@@ -55,4 +55,7 @@ public abstract record Document<TPrimaryKey> : ConsistentEntity<TPrimaryKey>, ID
 	/// <inheritdoc cref="IDocument{TPrimaryKey}.Url"/>
 	[Ordinal(7), Length(136), Index(false)]
 	public string? Url { get; init; }
+
+	[Ordinal(8)]
+	public DocumentStatus Status { get; init; }
 }

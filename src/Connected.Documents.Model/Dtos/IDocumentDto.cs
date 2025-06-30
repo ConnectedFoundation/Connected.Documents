@@ -6,4 +6,5 @@ public interface IDocumentDto : IDto
 {
 	string? Code { get; set; }
 	string? Title { get; set; }
+	DocumentStatus Status { get; set; }
 }

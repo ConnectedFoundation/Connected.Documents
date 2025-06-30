@@ -1,7 +1,10 @@
-﻿namespace Connected.Documents.Dtos;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Connected.Documents.Dtos;
 public abstract class InsertDocumentDto : DocumentDto, IInsertDocumentDto
 {
-	public int? Author { get; set; }
+	[MaxLength(256)]
+	public string? Author { get; set; }
 
 	public DateTimeOffset Created { get; set; }
 }
